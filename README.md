@@ -10,6 +10,10 @@ vue core demo
 ### postcss
 how to use postcss-px-to-viewport plugin
 
+### i18n
+how to use internationalization plugin
+vue-i18n
+
 ## Project setup
 ```
 yarn install
