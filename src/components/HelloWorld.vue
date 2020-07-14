@@ -1,5 +1,7 @@
 <template>
-  <div class="hello">
+  <div class="hello" @click="switchLang()">
+    {{$t('name')}}
+    <hr>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -35,6 +37,19 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted () {
+    // js 中使用
+    console.log('i18n', this.$i18n.locale, this.$i18n.tc('name'))
+  },
+  methods: {
+    switchLang () {
+      if (this.$i18n.locale === 'cn') {
+        this.$i18n.locale = 'en'
+      } else {
+        this.$i18n.locale = 'cn'
+      }
+    }
   }
 }
 </script>
