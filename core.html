@@ -8,9 +8,64 @@
 </head>
 <body>
   <div id="app">
-    <h2>{{ product }} are in stock.</h2>
+    <h2 v-once>{{ product }} are in stock.</h2>
+    <div>
+      <p v-bind:title="message">鼠标</p>
+      <p title="bind">非bind</p>
+    </div>
+    <div>
+      <ul><li v-for="todo in todos">{{ todo.text }}</li></ul>
+    </div>
+    <div>
+      <button v-on:click.prevent="reverseMessage">逆转消息</button>
+    </div>
+    <div>
+      <p><todo-item v-for="item in todos" v-bind:todo="item"></todo-item></p>
+    </div>
+    <div>
+      <div v-html="html1"></div>
+    </div>
+    <div>
+      <input type="text" v-model.lazy.trim="inputValue">
+      <p>{{ inputValue }}</p>
+    </div>
+    <div v-on:click="parent">
+      <div v-on:click.stop="child">child</div>
+    </div>
+    <div>
+      <form action="" v-on:submit.prevent="onSubmit">
+        <button>提交</button>
+      </form>
+    </div>
+    <hr>
+    <div v-on:click.self="parent">
+      <p>p</p>
+      <div v-on:click="child">child</div>
+    </div>
+    <div @click.capture="shout(1)">
+      obj1
+      <div @click.capture="shout(2)">
+        obj2
+        <div @click="shout(3)">
+          obj3
+          <div @click="shout(4)">
+            obj4
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="computed">
+      <p>message: {{ message }}</p>
+      <p>reversed message: {{ reversedMessage }}</p>
+    </div>
   </div>
-
+  <script>
+    Vue.component('todo-item', {
+      props: ['todo'],
+      template: '<li>{{ todo.text }}</li>'
+    })
+  </script>
   <script>
     // 神奇的开始：https://player.youku.com/embed/XMzMwMTYyODMyNA==
     console.log('Vue', new Vue);
@@ -18,7 +73,15 @@
     const app = new Vue({
       el: '#app',
       data: {
-        product: 'Boots'
+        product: 'Boots',
+        message: '页面加载于' + new Date().toLocaleString(),
+        todos: [
+          { text: '学习 JavaScript' },
+          { text: '学习 Vue' },
+          { text: '整个牛项目' }
+        ],
+        html1: '<i>1111</i>',
+        inputValue: ''
       },
       created() {
         // JavaScript 接口，用于访问和操纵 HTTP 管道的一些具体部分，例如请求和响应
@@ -31,6 +94,34 @@
             console.log('json', json);
             this.products = json.products;
           })
+      },
+      computed: {
+        reversedMessage: () => {
+          console.log('mes', this.message);
+          
+          // return this.message.split('').reverse().join('');
+        }
+      },
+      methods: {
+        reverseMessage() {
+          console.log('click');
+          
+          this.message = [...this.message].reverse().join('');
+          console.log('this.message', this.message);
+        },
+        parent() {
+          console.log('parent');
+        },
+        child() {
+          console.log('child');
+        },
+        onSubmit() {
+          console.log('form');
+          
+        },
+        shout(parame) {
+          console.log('shout', parame);
+        }
       }
     })
   </script>
