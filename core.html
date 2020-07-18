@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>{{ product }} are in stock.</h2>
+  </div>
+
+  <script>
+    // 神奇的开始：https://player.youku.com/embed/XMzMwMTYyODMyNA==
+    console.log('Vue', new Vue);
+    
+    const app = new Vue({
+      el: '#app',
+      data: {
+        product: 'Boots'
+      },
+      created() {
+        // JavaScript 接口，用于访问和操纵 HTTP 管道的一些具体部分，例如请求和响应
+        // https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
+        fetch('https://api-dev.tooqing.com/game/list?sorts[]=-onlinePlayerCount&sorts[]=-updatedAt&pageSize=30')
+          .then(res => {
+            return res.json();
+          })
+          .then(json => {
+            console.log('json', json);
+            this.products = json.products;
+          })
+      }
+    })
+  </script>
+</body>
+</html>

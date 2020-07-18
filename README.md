@@ -7,12 +7,16 @@
 ### core
 vue core demo
 
+### basic
+vue basic demo
+
 ### postcss
 how to use postcss-px-to-viewport plugin
 
 ### i18n
 how to use internationalization plugin
 vue-i18n
+
 
 ## Project setup
 ```
