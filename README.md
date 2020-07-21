@@ -20,6 +20,9 @@ vue-i18n
 ### template
 how to use template
 
+### iterator
+number
+
 
 
 ## Project setup
