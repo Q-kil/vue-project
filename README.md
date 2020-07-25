@@ -28,6 +28,8 @@ checkbox array
 
 ### data-function
 
+### prop
+
 
 ## Project setup
 ```

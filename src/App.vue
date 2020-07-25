@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ fontSize: postFontSize + 'em' }">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Your Vue.js App"  v-on:enlarge-text="postFontSize += 0.1"/>
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      postFontSize: 1
+    }
   }
 }
 </script>
