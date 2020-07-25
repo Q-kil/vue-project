@@ -1,5 +1,21 @@
 <template>
   <div class="hello">
+    <div>
+      <input type="checkbox" id="lily" value="lily" v-model="checknames">
+      <label for="lily">lily</label>
+      <input type="checkbox" id="seri" value="seri" v-model="checknames">
+      <label for="seri">seri</label>
+      <div>{{ checknames }}</div>
+
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames">
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+      <label for="mike">Mike</label>
+      <br>
+      <span>Checked names: {{ checkedNames }}</span>
+    </div>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -33,6 +49,12 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data() {
+    return {
+      checknames: [],
+      checkedNames: []
+    }
+  },
   props: {
     msg: String
   }
