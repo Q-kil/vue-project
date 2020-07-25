@@ -26,6 +26,7 @@ number
 ### checkbox
 checkbox array
 
+### data-function
 
 
 ## Project setup
