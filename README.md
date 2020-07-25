@@ -23,6 +23,9 @@ how to use template
 ### iterator
 number
 
+### checkbox
+checkbox array
+
 
 
 ## Project setup
