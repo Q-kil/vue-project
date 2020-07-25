@@ -1,12 +1,8 @@
 <template>
   <div class="hello">
-    <div>
-      <count-component></count-component>
-    </div>
-    <div>
-      <table>
-      <my-component></my-component>
-    </table>
+    <div id="count">
+      <!-- <my-component></my-component> -->
+      <my></my>
     </div>
     <h1>{{ msg }}</h1>
     <p>
@@ -39,25 +35,10 @@
 </template>
 
 <script>
-// var data = {
-//   count: 1
-// }
-// import Vue from "vue";
-// new Vue({
-//   'count-component': '<div @click="count += 1">{{ count }}</div>'
-// })
-
 var Child = {
   template: '<div>A custom component!</div>'
 }
-import Vue from 'vue'
-new Vue({
-  // ...
-  components: {
-    // <my-component> 将只在父组件模板中可用
-    'my-component': Child
-  }
-})
+
 
 export default {
   name: 'HelloWorld',
@@ -67,6 +48,9 @@ export default {
   // data: function() {
   //   return data
   // }
+  components: {
+    'my': Child
+  }
 }
 </script>
 
