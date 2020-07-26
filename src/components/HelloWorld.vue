@@ -3,6 +3,12 @@
     <button v-on:click="$emit('enlarge-text')">
    Enlarge text
   </button>
+  <slot></slot>
+   <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>

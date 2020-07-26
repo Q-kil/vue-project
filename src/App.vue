@@ -1,5 +1,9 @@
 <template>
   <div id="app" :style="{ fontSize: postFontSize + 'em' }">
+    <SlotTest url="www.baidu.com">
+     Your Profile
+    </SlotTest>
+    <hr>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"  v-on:enlarge-text="postFontSize += 0.1"/>
   </div>
@@ -7,11 +11,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import SlotTest from '@/components/SlotTest'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    SlotTest
   },
   data() {
     return {
