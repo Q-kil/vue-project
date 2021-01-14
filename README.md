@@ -53,3 +53,6 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/)
+
+### scroll
+鼠标左右滚动
