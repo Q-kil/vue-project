@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
+    <div class="container" id="nav">
       <div class="item"></div>
       <div class="item"></div>
       <div class="item"></div>
@@ -94,7 +94,7 @@ export default {
     .item {
       display: inline-block;
       width: 96px;
-      height: 94px;
+      height: 80px;
       background: #ff0000;
       border: 1px solid #448aff;
     }
