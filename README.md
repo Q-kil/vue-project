@@ -31,6 +31,8 @@ checkbox array
 ### net
 node module 
 
+### ios-fullscreen
+
 ## Project setup
 ```
 yarn install
