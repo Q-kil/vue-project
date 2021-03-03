@@ -34,6 +34,7 @@ node module
 ### ios-fullscreen
 
 ### router-delete-#
+[详情](https://juejin.cn/post/6934530581216788488/)
 
 ## Project setup
 ```
