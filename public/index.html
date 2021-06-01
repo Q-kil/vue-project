@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      let scriptElementTooqing = document.createElement('script');
+      scriptElementTooqing.src = 'js/tooqing.js';
+      scriptElementTooqing.id = 'tooqing';
+      scriptElementTooqing.async = false;
+      scriptElementTooqing.onload = function() {
+        console.log('tooqing.js load success!');
+      };
+      let head = document.getElementsByTagName('head').item(0);
+      head.appendChild(scriptElementTooqing);
+    </script>
   </head>
   <body>
     <noscript>
