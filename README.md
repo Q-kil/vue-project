@@ -39,6 +39,7 @@ node module
 ### cordova
 
 ### exclude
+vue-cli build
 
 ## Project setup
 ```
