@@ -38,6 +38,8 @@ node module
 
 ### cordova
 
+### exclude
+
 ## Project setup
 ```
 yarn install
