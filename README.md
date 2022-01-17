@@ -65,4 +65,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/)
 鼠标左右滚动
 
 ### system
-learn.
+learn..
