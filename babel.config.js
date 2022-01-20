@@ -1,5 +1,9 @@
 module.exports = {
+  // presets: [ [ "@vue/app", { useBuiltIns: "entry" } ] ],
   presets: [
-    '@vue/cli-plugin-babel/preset'
+    "stage-2"
+  ],
+  plugins: [
+    "transform-object-rest-spread"
   ]
 }
